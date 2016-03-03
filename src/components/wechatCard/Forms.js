@@ -5,10 +5,7 @@ import { Form, Select,Input, InputNumber, DatePicker, TimePicker, Switch, Radio,
 
 
 export default class Forms extends PureComponent {
-	static propTypes = {
-		form: PropTypes.object.isRequired,
-		dispatch: PropTypes.func.isRequired,
-	}
+
 
 	handleSubmit(e) {
 		e.preventDefault();
