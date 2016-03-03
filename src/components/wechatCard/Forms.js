@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 import PureComponent from './../PureComponent';
 
 import { Form, Select,Input, InputNumber, DatePicker, TimePicker, Switch, Radio,
@@ -10,7 +10,7 @@ export default class Forms extends PureComponent {
 
 	handleSubmit(e) {
 		e.preventDefault();
-		console.log('收到表单值：', this.props);
+		console.info('收到表单值：', this.props);
 	}
 
 
@@ -23,7 +23,7 @@ export default class Forms extends PureComponent {
 		const DraggerProps = {
 			name: 'file',
 			showUploadList: false,
-			action: '/upload.do',
+			action: '/upload.do'
 		}
 
 		return (
