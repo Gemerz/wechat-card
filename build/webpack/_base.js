@@ -48,45 +48,8 @@ const webpackConfig = {
       {
         test : /\.(js|jsx)$/,
         exclude : /node_modules/,
-        loader  : 'babel',
-        //query   : {
-        //  stage    : 0,
-        //  optional : ['runtime'],
-        //  env      : {
-        //    development : {
-        //      plugins : ['react-transform'],
-			//				presets: ['es2015', 'stage-0', 'react'],
-        //      extra   : {
-        //        'react-transform' : {
-        //          transforms : [{
-        //            transform : 'react-transform-catch-errors',
-        //            imports   : ['react', 'redbox-react']
-        //          }]
-        //        }
-        //      }
-        //    }
-        //  }
-        //},
-				query: {
-					cacheDirectory: true,
-					presets: ['es2015', 'stage-0', 'react'],
-					optional : ['runtime'],
-					env      : {
-						development : {
-							plugins : ['react-transform'],
-							presets: ['es2015', 'stage-0', 'react'],
-							extra   : {
-								'react-transform' : {
-									transforms : [{
-										transform : 'react-transform-catch-errors',
-										imports   : ['react', 'redbox-react']
-									}]
-								}
-							}
-						}
-					}
-
-				}
+        loader  : 'babel?presets[]=es2015',
+				presets: ['es2015', 'stage-0', 'react']
       },
       {
         test    : /\.scss$/,
