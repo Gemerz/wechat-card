@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
 import PureComponent from './../PureComponent';
+
 import { Form, Select,Input, InputNumber, DatePicker, TimePicker, Switch, Radio,
 	Slider, Button, Row, Col, Upload, Icon } from 'antd';
 
@@ -9,14 +10,7 @@ export default class Forms extends PureComponent {
 
 	handleSubmit(e) {
 		e.preventDefault();
-		console.log('收到表单值：', this.props.form.getFieldsValue());
-	}
-
-	normFile(e) {
-		if (Array.isArray(e)) {
-			return e;
-		}
-		return e && e.fileList;
+		console.log('收到表单值：', this.props);
 	}
 
 
@@ -25,6 +19,12 @@ export default class Forms extends PureComponent {
 		const Option = Select.Option;
 		const RadioGroup = Radio.Group;
 		const RangePicker = DatePicker.RangePicker;
+		const Dragger = Upload.Dragger;
+		const DraggerProps = {
+			name: 'file',
+			showUploadList: false,
+			action: '/upload.do',
+		}
 
 		return (
 
@@ -87,6 +87,44 @@ export default class Forms extends PureComponent {
 						wrapperCol={{ span: 14 }}>
 						<Input type="textarea" id="control-textarea" rows="3"/>
 					</FormItem>
+
+					<FormItem
+						label="封面图片："
+						labelCol={{ span: 4 }}
+						wrapperCol={{ span: 14 }}
+						help="图片建议尺寸：850像素*350像素，大小不超过2M。上传">
+						<Upload name="logo" action="/upload.do" listType="picture">
+							<Button type="ghost">
+								<Icon type="upload"/> 点击上传
+							</Button>
+						</Upload>
+					</FormItem>
+
+					<FormItem
+						id="control-textarea"
+						label="使用须知："
+						labelCol={{ span: 4 }}
+						wrapperCol={{ span: 14 }}>
+						<Input type="textarea" id="control-textarea" rows="3"/>
+					</FormItem>
+
+					<FormItem
+						label="图文介绍："
+						labelCol={{ span: 4 }}
+						wrapperCol={{ span: 14 }}
+						help="图片建议尺寸：850像素*350像素，大小不超过2M。上传">
+						<div style={{ marginTop: 16, height: 180 }}>
+							<Dragger {...DraggerProps}>
+								<p className="ant-upload-drag-icon">
+									<Icon type="inbox"/>
+								</p>
+								<p className="ant-upload-text">点击或将文件拖拽到此区域上传</p>
+								<p className="ant-upload-hint">支持单个或批量上传，严禁上传公司内部资料及其他违禁文件</p>
+							</Dragger>
+						</div>
+					</FormItem>
+
+
 					<Row style={{ marginTop: 24 }}>
 						<Col span="16" offset="8">
 							<Button type="primary" htmlType="submit">确定</Button>

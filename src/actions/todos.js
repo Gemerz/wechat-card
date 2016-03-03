@@ -1,4 +1,4 @@
-import * as types from 'constants/ActionTypes';
+import * as types from '../constants/ActionTypes';
 
 let idCounter = 0;
 export const addTodo = text => ({ type: types.ADD_TODO, text, id: ++idCounter });
