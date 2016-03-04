@@ -1,20 +1,26 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import PureComponent from './../PureComponent';
-
+import { bindingMixin } from 'redux-2way-binding';
 import { Form, Select,Input, InputNumber, DatePicker, TimePicker, Switch, Radio,
 	Slider, Button, Row, Col, Upload, Icon } from 'antd';
 
 
+@bindingMixin
+
 export default class Forms extends PureComponent {
+	constructor(props) {
+		super(props);
+		this.setBinding('users');
 
-
-	handleSubmit(e) {
-		e.preventDefault();
-		console.info('收到表单值：', this.props);
 	}
 
 
+	static propTypes = {};
+
+
 	render() {
+		const {cards} = this.props;
+
 		const FormItem = Form.Item;
 		const Option = Select.Option;
 		const RadioGroup = Radio.Group;
@@ -26,6 +32,7 @@ export default class Forms extends PureComponent {
 			action: '/upload.do'
 		}
 
+
 		return (
 
 			<div>
@@ -35,7 +42,7 @@ export default class Forms extends PureComponent {
 						label="商户："
 						labelCol={{ span: 4 }}
 						wrapperCol={{ span: 14 }}>
-						<Input id="wcc-user" placeholder="商戶名稱; 如:珠海唯創"/>
+						<Input id="wcc-user" placeholder="商戶名稱; 如:珠海唯創" valueLink={this.binding('name')}/>
 					</FormItem>
 
 					<FormItem
@@ -130,11 +137,17 @@ export default class Forms extends PureComponent {
 							<Button type="primary" htmlType="submit">确定</Button>
 						</Col>
 					</Row>
-
+					<div>
+						<p> Name:{cards.get('name')}</p>
+					
+					</div>
 				</Form>
 			</div>
 		);
 	}
 }
-
-
+//
+//
+//const mapStateToProps = state => ({...state.cards});
+//
+//export default connect(mapStateToProps)(Forms);

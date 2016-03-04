@@ -1,14 +1,18 @@
 import React from 'react';
 import PureComponent from '../components/PureComponent';
 import WeChatCard from '../components/wechatCard/WeChatCard';
+import TD from '../components/todo/TD';
+export default class Layout extends PureComponent {
 
-class Layout extends PureComponent {
-		render() {
-			return (
-				<div className="WeChatCard-container">
-					<WeChatCard />
-				</div>
-			);
-		}
+
+	render() {
+		return (
+			<div className="WeChatCard-container">
+				<TD />
+				<WeChatCard />
+
+
+			</div>
+		);
+	}
 }
-export default Layout;
