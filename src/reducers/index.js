@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 import todos from './todos';
-import cards from './cards';
+import wizforms from './wizforms';
 
 export default combineReducers({
-	todos, cards
+	todos, wizforms
 });

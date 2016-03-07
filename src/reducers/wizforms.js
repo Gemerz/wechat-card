@@ -7,6 +7,6 @@ const initialState = Immutable.fromJS({
 
 });
 
-export default bindingStore('cards',initialState, {
+export default bindingStore('wizforms',initialState, {
 
 })

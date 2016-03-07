@@ -73,11 +73,17 @@ const paths = (() => {
 
 config.set('utils_paths', paths);
 config.set('utils_aliases', [
-  'actions',
-  'components',
-  'constants',
-  'reducers',
-  'styles',
-].reduce((acc, x) => ((acc[x] = paths.src(x)) && acc), {}));
+	'actions',
+	'components',
+	'constants',
+	'containers',
+	'layouts',
+	'reducers',
+	'routes',
+	'services',
+	'styles',
+	'utils',
+	'views'
+].reduce((acc, dir) => ((acc[dir] = paths.src(dir)) && acc), {}));
 
 export default config;

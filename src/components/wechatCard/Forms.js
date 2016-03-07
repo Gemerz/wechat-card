@@ -1,4 +1,6 @@
 import React, { PropTypes } from 'react';
+import LinkedStateMixin from 'react/lib/LinkedStateMixin';
+import { connect } from 'react-redux';
 import PureComponent from './../PureComponent';
 import { bindingMixin } from 'redux-2way-binding';
 import { Form, Select,Input, InputNumber, DatePicker, TimePicker, Switch, Radio,
@@ -6,20 +8,20 @@ import { Form, Select,Input, InputNumber, DatePicker, TimePicker, Switch, Radio,
 
 
 @bindingMixin
-
 export default class Forms extends PureComponent {
 	constructor(props) {
 		super(props);
-		this.setBinding('users');
-
+		this.setBinding('wizforms');
 	}
 
 
-	static propTypes = {};
+	static propTypes = {
+
+	};
 
 
 	render() {
-		const {cards} = this.props;
+		const {wizforms} = this.props;
 
 		const FormItem = Form.Item;
 		const Option = Select.Option;
@@ -42,7 +44,7 @@ export default class Forms extends PureComponent {
 						label="商户："
 						labelCol={{ span: 4 }}
 						wrapperCol={{ span: 14 }}>
-						<Input id="wcc-user" placeholder="商戶名稱; 如:珠海唯創" valueLink={this.binding('name')}/>
+						<Input id="wcc-user" placeholder="商戶名稱; 如:珠海唯創" />
 					</FormItem>
 
 					<FormItem
@@ -138,8 +140,8 @@ export default class Forms extends PureComponent {
 						</Col>
 					</Row>
 					<div>
-						<p> Name:{cards.get('name')}</p>
-					
+
+
 					</div>
 				</Form>
 			</div>
@@ -148,6 +150,6 @@ export default class Forms extends PureComponent {
 }
 //
 //
-//const mapStateToProps = state => ({...state.cards});
-//
-//export default connect(mapStateToProps)(Forms);
+const mapStateToProps = state => ({...state.wizforms});
+
+export default connect(mapStateToProps)(Forms);
