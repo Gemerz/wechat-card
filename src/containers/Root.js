@@ -1,10 +1,8 @@
 import React                    from 'react';
 import { Provider }             from 'react-redux';
-import routes                   from '../routes';
-import { ReduxRouter }          from 'redux-router';
 import DevTools                 from './DevTools';
-import { createDevToolsWindow } from '../utils';
-
+import { createDevToolsWindow } from '../utils/tools';
+import Layout from '../layout/Layout';
 
 export default class Root extends React.Component {
   static propTypes = {
@@ -31,10 +29,8 @@ export default class Root extends React.Component {
     return (
       <div>
           <Provider store={this.props.store}>
+						<Layout />
             <div>
-              <ReduxRouter>
-                {routes}
-              </ReduxRouter>
               {this.renderDevTools()}
             </div>
           </Provider>

@@ -1,9 +1,16 @@
 {
+	"extends": ["eslint:recommended", "plugin:react/recommended","airbnb/base"],
 	"parser": "babel-eslint",
 	"plugins": [
 		"react"
 	],
-	"extends": ["eslint:recommended", "plugin:react/recommended"],
+	"globals" : {
+		"__DEV__"      : false,
+		"__PROD__"     : false,
+		"__DEBUG__"    : false,
+		"__DEBUG_NW__" : false
+	},
+
 	"parserOptions": {
 		"ecmaFeatures": {
 			"jsx": true,

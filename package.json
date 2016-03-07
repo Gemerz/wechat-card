@@ -7,8 +7,29 @@
   "scripts": {
     "clean": "rm -rf dist",
     "start": "npm run dev",
-    "dev": "node bin/webpack-dev-server",
+    "dev": "node ./node_modules/.bin/better-npm-run dev",
+		"compile": "node ./node_modules/.bin/better-npm-run compile",
     "dev:no-debug": "npm run dev -- --no_debug"
+  },
+  "betterScripts": {
+    "dev": {
+      "command": "node --harmony bin/webpack-dev-server",
+      "env": {
+        "NODE_ENV": "development"
+      }
+    },
+    "compile": {
+      "command": "webpack",
+      "env": {
+        "NODE_ENV": "production"
+      }
+    },
+    "test:dev": {
+      "command": "npm run test -- --watch",
+      "env": {
+        "NODE_ENV": "development"
+      }
+    }
   },
   "devDependencies": {
     "babel": "^6.5.2",
@@ -22,6 +43,7 @@
     "babel-preset-react": "^6.5.0",
     "babel-preset-stage-0": "^6.5.0",
     "babel-runtime": "^6.2.0",
+    "better-npm-run": "0.0.8",
     "css-loader": "^0.23.1",
     "eslint": "^2.2.0",
     "eslint-config-airbnb": "^6.0.2",
@@ -36,7 +58,7 @@
     "react-transform-catch-errors": "^1.0.2",
     "react-transform-hmr": "^1.0.0",
     "redbox-react": "^1.0.4",
-		"redux-devtools": "^3.1.1",
+    "redux-devtools": "^3.1.1",
     "redux-devtools-dock-monitor": "^1.1.0",
     "redux-devtools-log-monitor": "^1.0.5",
     "sass-loader": "^3.1.2",
@@ -49,13 +71,17 @@
     "antd": "^0.12.5",
     "bootstrap": "^3.3.5",
     "classnames": "^2.2.0",
+    "history": "^2.0.1",
     "immutable": "^3.7.5",
     "react": "^0.14.0",
     "react-dom": "^0.14.0",
     "react-pure-render": "^1.0.2",
     "react-redux": "^4.0.0",
+    "react-router": "^2.0.0",
     "redux": "^3.0.0",
     "redux-2way-binding": "0.0.8",
+    "redux-router": "^1.0.0-beta7",
+    "redux-thunk": "^2.0.1",
     "yargs": "^4.2.0"
   }
 }

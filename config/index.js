@@ -79,6 +79,7 @@ config.set('utils_aliases', [
 	'layouts',
 	'reducers',
 	'routes',
+	'store',
 	'services',
 	'styles',
 	'utils',
