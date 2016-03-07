@@ -5,6 +5,8 @@ import { Form, Input, Select, Checkbox, Radio } from 'antd';
 
 export default class Card extends PureComponent {
 
+	static propTypes = {}
+
 	render() {
 		const FormItem = Form.Item;
 		const Option = Select.Option;
@@ -19,8 +21,10 @@ export default class Card extends PureComponent {
 								<div className='shop_panel'>
 									<div className='logo_area'>
 										<span className='logo'>
-											<img id='js_logo_url_preview'
-													 src='https://mmbiz.qlogo.cn/mmbiz/ibj29pydJbnKmfKULMk87GGxgrqriapevWmIibBwmRTaxR0PGqY37ggephG9UiaotiaxkcwuWb9TfiaXibLQPEafTOZzg/0?wx_fmt=jpeg'/>
+											<img
+												id='js_logo_url_preview'
+												src='https://mmbiz.qlogo.cn/mmbiz/ibj29pydJbnKmfKULMk87GGxgrqriapevWmIibBwmRTaxR0PGqY37ggephG9UiaotiaxkcwuWb9TfiaXibLQPEafTOZzg/0?wx_fmt=jpeg'
+											/>
 										</span>
 										<p className='brandname'></p>
 										<p className='title'></p>

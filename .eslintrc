@@ -3,7 +3,7 @@
 	"env"     : {
 		"browser" : true
 	},
-	"parser": "babel-eslint",
+
 	"globals" : {
 		"__DEV__"      : false,
 		"__PROD__"     : false,
@@ -11,6 +11,7 @@
 		"__DEBUG_NW__" : false
 	},
 	"rules": {
+		"indent": [2, 2],
 		"comma-dangle" : [1, "never"],
 		"func-names"   : 0,
 		"key-spacing"  : 0,

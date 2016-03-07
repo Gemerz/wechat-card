@@ -22,6 +22,7 @@ export default class TodoList extends PureComponent {
   }
 
   render() {
+
     const todoList = this.filterTodoList();
     return (
       <div>

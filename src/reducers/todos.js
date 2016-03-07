@@ -2,8 +2,8 @@ import * as types from 'constants/ActionTypes';
 import { List, Map } from 'immutable';
 import { combineReducers } from 'redux';
 
-function todoList(state = List(), action) {
-	switch (action.type) {
+function todoList (state = List(), action) {
+	switch(action.type) {
 		case types.ADD_TODO:
 			return state.push(Map({
 				id: action.id,

@@ -1,25 +1,27 @@
 import React, { PropTypes } from 'react';
-import LinkedStateMixin from 'react/lib/LinkedStateMixin';
-import { connect } from 'react-redux';
 import PureComponent from './../PureComponent';
+import { bindActionCreators } from 'redux';
 import { bindingMixin } from 'redux-2way-binding';
 import { Form, Select,Input, InputNumber, DatePicker, TimePicker, Switch, Radio,
 	Slider, Button, Row, Col, Upload, Icon } from 'antd';
 
-
 @bindingMixin
-export default class Forms extends PureComponent {
+export  default class Forms extends PureComponent {
+
 	constructor(props) {
 		super(props);
-		this.setBinding('wizforms');
+		this.setBinding('wizforms', props.wizforms, props.dispatch);
+
+
 	}
 
-
-	static propTypes = {};
-
+	static propTypes = {
+		//wizforms: PropTypes.object.isRequired
+	};
 
 	render() {
-		const {wizforms} = this.props;
+
+		const { wizforms} = this.props;
 
 		const FormItem = Form.Item;
 		const Option = Select.Option;
@@ -34,15 +36,14 @@ export default class Forms extends PureComponent {
 
 
 		return (
-
-			<div>
+			<div >
 				<Form horizontal onSubmit={this.handleSubmit}>
 					<FormItem
 						id="wcc-user"
 						label="商户："
 						labelCol={{ span: 4 }}
 						wrapperCol={{ span: 14 }}>
-						<Input id="wcc-user" placeholder="商戶名稱; 如:珠海唯創"/>
+						<Input id="wcc-user" placeholder="商戶名稱; 如:珠海唯創" />
 					</FormItem>
 
 					<FormItem
@@ -143,11 +144,8 @@ export default class Forms extends PureComponent {
 					</div>
 				</Form>
 			</div>
-		);
+		)
 	}
 }
-//
-//
-const mapStateToProps = state => ({...state.wizforms});
 
-export default connect(mapStateToProps)(Forms);
+

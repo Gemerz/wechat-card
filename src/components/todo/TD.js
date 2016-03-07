@@ -14,6 +14,7 @@ class TD extends PureComponent {
 	}
 
 	render() {
+
 		const { dispatch, activeFilter, todoList } = this.props;
 		return (
 			<div className="todo-ing">

@@ -23,6 +23,7 @@ export default class Todo extends PureComponent {
 	}
 
 	render() {
+
 		const { id, text, isCompleted } = this.props.todo.toObject();
 		const classNames = cn('todo', {
 			completed: isCompleted,

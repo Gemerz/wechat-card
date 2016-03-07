@@ -7,8 +7,12 @@ import Card from './Card';
 
 class WeChatCard extends PureComponent {
 
+	static propTypes = {
+		//wizforms: PropTypes.object.isRequired
+	};
 
 	render() {
+		const { wizforms } =this.props;
 
 		return (
 			<div>
@@ -18,7 +22,7 @@ class WeChatCard extends PureComponent {
 				</div>
 
 				<div className="col-16 wechatcard-form ">
-					<Forms />
+					<Forms/>
 				</div>
 			</div>
 		);
@@ -26,7 +30,7 @@ class WeChatCard extends PureComponent {
 }
 
 
-const mapStateToProps = state => ({...state.forms});
+const mapStateToProps = state => ({...state.wizforms});
 
 export default connect(mapStateToProps)(WeChatCard);
 
