@@ -15,9 +15,7 @@ export default class Forms extends PureComponent {
 	}
 
 
-	static propTypes = {
-
-	};
+	static propTypes = {};
 
 
 	render() {
@@ -44,7 +42,7 @@ export default class Forms extends PureComponent {
 						label="商户："
 						labelCol={{ span: 4 }}
 						wrapperCol={{ span: 14 }}>
-						<Input id="wcc-user" placeholder="商戶名稱; 如:珠海唯創" />
+						<Input id="wcc-user" placeholder="商戶名稱; 如:珠海唯創"/>
 					</FormItem>
 
 					<FormItem

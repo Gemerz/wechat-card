@@ -1,12 +1,8 @@
 import binding from 'redux-2way-binding';
 import Immutable from 'immutable';
 
-let bindingStore=binding.bindingStore;
+const bindingStore = binding.bindingStore;
 
-const initialState = Immutable.fromJS({
+const initialState = Immutable.fromJS({});
 
-});
-
-export default bindingStore('wizforms',initialState, {
-
-})
+export default bindingStore('wizforms', initialState, {});
